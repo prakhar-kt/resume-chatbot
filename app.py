@@ -170,15 +170,17 @@ app = FastAPI(title="Prakhar Srivastava Resume Chatbot")
 # Mount static files
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
-# Initialize the chatbot
+# Initialize the chatbot - do it eagerly to avoid startup delays
+print("Initializing Resume Chatbot...")
 bot_instance = None
 
-@app.on_event("startup")
-async def startup_event():
+def initialize_bot():
     global bot_instance
-    print("Initializing Resume Chatbot...")
-    bot_instance = Me()
-    print("Resume Chatbot initialized successfully!")
+    if bot_instance is None:
+        print("Creating bot instance...")
+        bot_instance = Me()
+        print("Resume Chatbot initialized successfully!")
+    return bot_instance
 
 @app.get("/", response_class=HTMLResponse)
 async def root():
@@ -188,10 +190,8 @@ async def root():
 @app.post("/chat", response_model=ChatResponse)
 async def chat_endpoint(chat_data: ChatMessage):
     try:
-        if not bot_instance:
-            raise HTTPException(status_code=503, detail="Chatbot not initialized")
-        
-        response = bot_instance.chat(chat_data.message, chat_data.history)
+        bot = initialize_bot()
+        response = bot.chat(chat_data.message, chat_data.history)
         return ChatResponse(response=response)
     
     except Exception as e:
@@ -200,7 +200,11 @@ async def chat_endpoint(chat_data: ChatMessage):
 
 @app.get("/health")
 async def health_check():
-    return {"status": "healthy", "bot_ready": bot_instance is not None}
+    try:
+        # Simple health check that doesn't require bot initialization
+        return {"status": "healthy", "timestamp": "ok"}
+    except Exception as e:
+        return {"status": "error", "error": str(e)}
 
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=8000)
