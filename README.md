@@ -109,11 +109,6 @@ The application leverages DSPy's structured approach to AI interactions, replaci
 
 ## 🛠️ Development
 
-### Adding New Features
-
-1. **Backend Changes**: Modify `app.py` for API endpoints or DSPy logic
-2. **Frontend Updates**: Edit files in `static/` directory
-3. **Content Updates**: Update `selfinfo/summary.txt` or replace the PDF
 
 ### Environment Setup
 
