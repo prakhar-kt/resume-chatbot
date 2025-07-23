@@ -1,13 +1,14 @@
 [project]
 name = "resume-chatbot"
 version = "0.1.0"
-description = "Add your description here"
+description = "Resume chatbot for Prakhar Srivastava built with DSPy and Claude AI"
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
     "anthropic>=0.58.2",
     "dspy-ai>=2.6.27",
-    "gradio>=5.38.0",
+    "fastapi>=0.116.1",
+    "uvicorn>=0.35.0",
     "pypdf>=5.8.0",
     "python-dotenv>=1.1.1",
     "requests>=2.32.4",
