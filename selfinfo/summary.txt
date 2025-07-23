@@ -1,0 +1,57 @@
+Prakhar Srivastava is a Senior AI/ML Engineer with over 6 years of experience in building innovative data solutions and production-scale machine learning systems. Based in Bengaluru, India, he has a proven track record of driving business transformation through AI and delivering significant cost savings for Fortune 500 clients.
+
+## Professional Highlights
+
+**Current Role:** Senior Consultant at StatusNeo (July 2023 - Present)
+- Architected enterprise RAG systems using GPT-4 and Milvus vector database on Kubernetes
+- Built Multi-Agent AI systems using Anthropic's Model Context Protocol (MCP) for autonomous IT operations
+- Developed production-scale Agentic AI platforms using LangGraph and Claude-3
+- Led cross-functional teams and presented solutions to C-suite executives
+- Achieved significant business impact: 80% reduction in incident resolution time, $2M annual savings for clients
+
+**Previous Experience:**
+- Senior Data Engineer at Sprighub (2022-2023): Specialized in cloud-native ETL pipelines on AWS
+- Data Scientist at KodeTiger (2019-2022): Focused on document intelligence and fraud detection systems
+
+## Core Expertise
+
+**AI/ML & NLP:** Expert in Large Language Models (GPT-4, T5, BERT), RAG Architecture, Vector Databases, Agentic AI, PyTorch, Transformers, LangChain, and MLOps
+
+**Data Engineering:** Proficient in PySpark, Databricks, AWS Glue, Apache Airflow, ETL/ELT processes, and Data Lakehouse Architecture
+
+**Cloud & DevOps:** Extensive experience with AWS services (EC2, Lambda, SageMaker, EKS), Kubernetes, Docker, and CI/CD pipelines
+
+**Databases:** Skilled in PostgreSQL, Neo4j Graph DB, MongoDB, Vector Databases, Redis, and both SQL/NoSQL systems
+
+**Programming:** Expert in Python, SQL, Scala, FastAPI, and Flask
+
+## Key Achievements
+
+- Reduced operational costs by 30-80% across Fortune 500 clients
+- Built systems processing 50K+ incidents monthly with 95% accuracy
+- Deployed ML models serving millions of predictions daily
+- Automated 1000+ daily IT operations tasks with 90% automation rate
+- Processed 100K+ financial documents monthly through intelligent document processing
+- Led implementation of HRIS AI platform for 100K+ employees with 92% prediction accuracy
+- Optimized systems to handle 1M+ API calls daily with 99.9% uptime SLA
+
+## Education & Certifications
+
+**Education:**
+- Institute of Actuaries of India (2007-2008): Actuarial Sciences
+- Marine Engineering & Research Institute (1997-2001): B.E. Marine Engineering (Selected through IIT-JEE 1997, Rank: 4430)
+
+**Certifications:**
+- AWS Certified Machine Learning - Specialty (2023)
+- AWS Certified Solutions Architect - Associate (2022)
+- Databricks Certified Associate Developer for Apache Spark (2023)
+- Certified Scrum Master (CSM) - Scrum Alliance (2021)
+- Tableau Desktop Specialist (2022)
+
+## Leadership & Impact
+
+Prakhar has demonstrated strong leadership capabilities by managing cross-functional teams of up to 8 members in Agile/Scrum environments while mentoring junior engineers. His solutions have consistently delivered measurable business value, from preventing $5M in fraudulent activities to saving clients millions through operational efficiency improvements.
+
+He is passionate about leveraging cutting-edge AI technologies to solve complex business problems and has expertise in both traditional machine learning and modern AI approaches including LLMs, RAG systems, and multi-agent architectures.
+
+**Contact:** psrivasin@gmail.com | +91-9205139777 | LinkedIn | GitHub | Medium

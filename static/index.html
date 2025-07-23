@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prakhar Srivastava - Resume Chatbot</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="profile-section">
+                <div class="profile-info">
+                    <h1>Prakhar Srivastava</h1>
+                    <p class="title">Senior AI/ML Engineer</p>
+                    <p class="subtitle">Ask me anything about my background, experience, and skills!</p>
+                </div>
+            </div>
+        </header>
+
+        <div class="chat-container">
+            <div class="chat-messages" id="chatMessages">
+                <div class="message bot-message">
+                    <div class="message-content">
+                        <strong>Prakhar:</strong> Hello! I'm Prakhar Srivastava, a Senior AI/ML Engineer with 6+ years of experience. 
+                        Feel free to ask me about my background, technical skills, projects, or anything else you'd like to know about my professional journey!
+                    </div>
+                    <div class="message-time" id="welcomeTime"></div>
+                </div>
+            </div>
+            
+            <div class="chat-input-container">
+                <div class="input-group">
+                    <input type="text" id="messageInput" placeholder="Ask me about my experience, skills, projects..." 
+                           maxlength="500" autocomplete="off">
+                    <button id="sendButton" onclick="sendMessage()">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2 21L23 12L2 3V10L17 12L2 14V21Z" fill="currentColor"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="typing-indicator" id="typingIndicator" style="display: none;">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    Prakhar is typing...
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="contact-info">
+                <a href="mailto:psrivasin@gmail.com">psrivasin@gmail.com</a> | 
+                <span>+91-9205139777</span> | 
+                <span>Bengaluru, India</span>
+            </div>
+            <div class="social-links">
+                <a href="#" target="_blank">LinkedIn</a> | 
+                <a href="#" target="_blank">GitHub</a> | 
+                <a href="#" target="_blank">Medium</a>
+            </div>
+        </footer>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
