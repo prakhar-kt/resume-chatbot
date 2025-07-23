@@ -65,16 +65,28 @@ class ResumeBot(dspy.Module):
         self.knowledge_checker = dspy.Predict(KnowledgeCheck)
         self.name = "Prakhar Srivastava"
         
-        # Load resume data
-        reader = PdfReader("selfinfo/ResumePS.pdf")
-        self.resume = ""
-        for page in reader.pages:
-            text = page.extract_text()
-            if text:
-                self.resume += text
+        # Load resume data - with debug info
+        print(f"[DEBUG] Loading resume from: selfinfo/ResumePS.pdf")
+        try:
+            reader = PdfReader("selfinfo/ResumePS.pdf")
+            self.resume = ""
+            for page in reader.pages:
+                text = page.extract_text()
+                if text:
+                    self.resume += text
+            print(f"[DEBUG] Successfully loaded resume, {len(self.resume)} characters")
+        except Exception as e:
+            print(f"[ERROR] Failed to load PDF: {e}")
+            raise
         
-        with open("selfinfo/summary.txt", "r", encoding="utf-8") as f:
-            self.summary = f.read()
+        print(f"[DEBUG] Loading summary from: selfinfo/summary.txt")
+        try:
+            with open("selfinfo/summary.txt", "r", encoding="utf-8") as f:
+                self.summary = f.read()
+            print(f"[DEBUG] Successfully loaded summary, {len(self.summary)} characters")
+        except Exception as e:
+            print(f"[ERROR] Failed to load summary: {e}")
+            raise
         
         # Create context for DSPy
         self.context = f"You are Prakhar Srivastava. \

@@ -26,6 +26,9 @@ RUN ls -la /app/
 RUN ls -la /app/selfinfo/
 RUN cat /app/selfinfo/summary.txt | head -3
 
+# Debug: show what app.py contains for file paths
+RUN grep -n "selfinfo\|me/" /app/app.py || echo "No file path references found"
+
 # Expose port
 EXPOSE 8000
 
