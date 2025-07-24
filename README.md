@@ -1,34 +1,31 @@
-# 🤖 Resume Chatbot - Prakhar Srivastava
+# Resume Chatbot - Prakhar Srivastava
 
-A modern, interactive AI-powered chatbot that answers questions about Prakhar Srivastava's professional background, experience, and skills. Built with DSPy framework, Claude AI, and a custom web interface.
+An interactive AI chatbot that answers questions about Prakhar Srivastava's professional background, experience, and skills. Built with DSPy framework, Claude 3.5 Sonnet, and FastAPI.
 
-## 🌐 **Live Demo**
-**Try it now:** [https://web-production-10596.up.railway.app](https://web-production-10596.up.railway.app)
+## Live Demo
+**Try it:** [https://web-production-10596.up.railway.app](https://web-production-10596.up.railway.app)
 
-![Resume Chatbot Demo](https://img.shields.io/badge/Status-Live-brightgreen) ![Python](https://img.shields.io/badge/Python-3.11+-blue) ![FastAPI](https://img.shields.io/badge/FastAPI-Latest-green) ![DSPy](https://img.shields.io/badge/DSPy-AI%20Framework-purple) ![Claude](https://img.shields.io/badge/Claude-3.5%20Sonnet-orange)
+![Status](https://img.shields.io/badge/Status-Live-brightgreen) ![Python](https://img.shields.io/badge/Python-3.11+-blue) ![FastAPI](https://img.shields.io/badge/FastAPI-Latest-green) ![DSPy](https://img.shields.io/badge/DSPy-Framework-purple)
 
-## 🌟 Features
+## Features
 
-- **🧠 AI-Powered Conversations**: Uses Claude 3.5 Sonnet via DSPy framework for intelligent, structured responses
-- **📄 Resume Intelligence**: Automatically parses PDF resume and generates comprehensive summaries
-- **💬 Modern Web Interface**: Custom-built responsive chat interface with professional design
-- **📱 Mobile Responsive**: Works seamlessly across desktop, tablet, and mobile devices
-- **⚡ Real-time Chat**: Instant messaging with typing indicators and smooth animations
-- **📧 Smart Contact Detection**: Automatically detects and records user contact information via Pushover
-- **🔍 Context Awareness**: Maintains conversation history for natural, flowing interactions
-- **🛡️ Robust Error Handling**: Graceful fallbacks and comprehensive error management
-- **🚀 Production Ready**: Deployed on Railway with health checks and monitoring
+- **AI-Powered Conversations**: Uses Claude 3.5 Sonnet with DSPy framework for structured responses
+- **Resume Intelligence**: Automatically parses PDF resume and generates summaries
+- **Web Interface**: Custom responsive chat interface
+- **Mobile Responsive**: Works across desktop, tablet, and mobile devices
+- **Real-time Chat**: Instant messaging with typing indicators
+- **Contact Detection**: Records user contact information via Pushover notifications
+- **Context Awareness**: Maintains conversation history for natural interactions
+- **Production Ready**: Deployed on Railway with monitoring
 
-## 🎯 **What Makes This Special**
+## Key Benefits
 
-Unlike traditional static resumes, this chatbot provides:
-- **Interactive Experience**: Ask specific questions about experience, skills, or projects
-- **Natural Conversations**: Context-aware responses that feel like talking to a real person  
-- **Instant Access**: No need to download or read through lengthy documents
-- **Professional Presentation**: Clean, modern interface that showcases technical abilities
-- **Lead Generation**: Automatic contact capture for networking and opportunities
+- Interactive alternative to static resume documents
+- Ask specific questions about experience, skills, or projects
+- Context-aware responses for natural conversation flow
+- Professional presentation showcasing technical capabilities
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 
@@ -64,7 +61,7 @@ Unlike traditional static resumes, this chatbot provides:
 5. **Open your browser**
    Navigate to `http://localhost:8000` and start chatting!
 
-## 🏗️ Architecture
+## Architecture
 
 ### Technology Stack
 
@@ -102,12 +99,12 @@ The application leverages DSPy's structured approach to AI interactions, replaci
 - **`ResumeBot`**: Core module orchestrating all AI interactions with automatic optimization
 
 **Why DSPy?** Unlike traditional prompt engineering, DSPy provides:
-- **Type Safety**: Structured inputs/outputs with automatic validation
-- **Optimization**: Automatic prompt improvement based on performance
-- **Modularity**: Composable AI components that can be tested and refined
-- **Maintainability**: Clear separation of AI logic from application code
+- Type safety with structured inputs/outputs
+- Automatic prompt optimization based on performance
+- Modular, composable AI components
+- Clear separation of AI logic from application code
 
-## 🛠️ Development
+## Development
 
 
 ### Environment Setup
@@ -167,11 +164,11 @@ uv remove package-name
 - **Content**: Update `selfinfo/summary.txt` and replace the PDF
 - **Behavior**: Modify DSPy signatures in `app.py` for different AI behavior
 
-## 🚀 Deployment
+## Deployment
 
 ### Live Production App
-The application is **currently deployed** and running at:
-**🌐 [https://web-production-10596.up.railway.app](https://web-production-10596.up.railway.app)**
+The application is currently deployed at:
+[https://web-production-10596.up.railway.app](https://web-production-10596.up.railway.app)
 
 ### Local Development
 ```bash
@@ -188,12 +185,12 @@ The application supports multiple deployment platforms:
 - **AWS/GCP**: Container deployment with provided Dockerfiles
 
 ### Railway Deployment Features
-- **🔄 Auto-deployment**: Pushes to main branch trigger automatic deploys
-- **📊 Health monitoring**: Built-in health checks and error tracking
-- **🌍 Global CDN**: Fast response times worldwide
-- **📈 Scaling**: Automatic scaling based on traffic
+- Auto-deployment from main branch
+- Built-in health checks and monitoring
+- Global CDN for fast response times
+- Automatic scaling based on traffic
 
-## 🤝 Contributing
+## Contributing
 
 1. Fork the repository
 2. Create a feature branch (`git checkout -b feature/amazing-feature`)
@@ -215,21 +212,18 @@ Created by **Prakhar Srivastava** - Senior AI/ML Engineer with 6+ years of exper
 
 ---
 
-## 🔗 **Live Links**
+## Links
 
-- **🌐 Live App**: [https://web-production-10596.up.railway.app](https://web-production-10596.up.railway.app)
-- **📂 GitHub**: [https://github.com/prakhar-kt/resume-chatbot](https://github.com/prakhar-kt/resume-chatbot)
-- **💼 LinkedIn**: [Connect with Prakhar](https://linkedin.com/in/prakhar-srivastava)
+- **Live App**: [https://web-production-10596.up.railway.app](https://web-production-10596.up.railway.app)
+- **GitHub**: [https://github.com/prakhar-kt/resume-chatbot](https://github.com/prakhar-kt/resume-chatbot)
+- **LinkedIn**: [Connect with Prakhar](https://linkedin.com/in/prakhar-srivastava)
 
-**Try the chatbot live and ask me anything about my professional journey!** 🚀
-
-## 🎉 **Project Highlights**
+## Project Highlights
 
 This project demonstrates:
-- **Modern AI Engineering**: Using DSPy for structured LLM interactions
-- **Full-Stack Development**: Custom frontend + FastAPI backend
-- **DevOps Excellence**: Automated deployment with Railway
-- **User Experience**: Professional, interactive resume presentation
-- **Technical Innovation**: Moving beyond static PDFs to conversational interfaces
+- Modern AI engineering using DSPy for structured LLM interactions
+- Full-stack development with custom frontend and FastAPI backend
+- Automated deployment and DevOps practices
+- Interactive alternative to traditional resume presentation
 
-*Built with ❤️ by Prakhar Srivastava*
+*Built by Prakhar Srivastava*
