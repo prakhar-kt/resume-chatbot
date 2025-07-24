@@ -75,8 +75,8 @@ An interactive AI chatbot that answers questions about Prakhar Srivastava's prof
 ### Project Structure
 
 ```
-├── app.py                 # Main FastAPI application with DSPy implementation
-├── run.py                 # Launch script for the web application
+├── app.py                 # Main FastAPI application with DSPy implementation  
+├── start.py               # Production startup script with debugging
 ├── static/
 │   ├── index.html        # Main chat interface
 │   ├── style.css         # Styling for the web interface
@@ -84,8 +84,10 @@ An interactive AI chatbot that answers questions about Prakhar Srivastava's prof
 ├── selfinfo/
 │   ├── ResumePS.pdf      # Resume PDF file
 │   └── summary.txt       # Professional summary extracted from resume
+├── Dockerfile            # Production Docker image for AWS/GCS
+├── Dockerfile.railway    # Railway-specific Docker configuration  
+├── docker-compose.yml    # Local development setup
 ├── pyproject.toml        # Project dependencies
-├── CLAUDE.md            # Development documentation
 └── README.md            # This file
 ```
 
@@ -172,17 +174,41 @@ The application is currently deployed at:
 
 ### Local Development
 ```bash
-python run.py
-# or 
-python start.py  # with comprehensive debugging
+# For development with debugging
+python start.py
+
+# Or using Docker Compose
+docker-compose up --build
 ```
 
 ### Production Deployment Options
-The application supports multiple deployment platforms:
-- **✅ Railway** (currently used): Native Python deployment with automatic builds
-- **Render**: Free tier available with Docker support
-- **Heroku**: Container or buildpack deployment  
-- **AWS/GCP**: Container deployment with provided Dockerfiles
+
+#### Railway (Currently Used)
+Railway uses native Python deployment without Docker:
+```bash
+# Automatic deployment from GitHub
+# Uses railway.json configuration
+```
+
+#### AWS Fargate
+Deploy using the main Dockerfile:
+```bash
+# Build and push to ECR
+aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin <account>.dkr.ecr.us-east-1.amazonaws.com
+docker build -t resume-chatbot .
+docker tag resume-chatbot:latest <account>.dkr.ecr.us-east-1.amazonaws.com/resume-chatbot:latest
+docker push <account>.dkr.ecr.us-east-1.amazonaws.com/resume-chatbot:latest
+```
+
+#### Google Cloud Run
+Deploy directly from source:
+```bash
+gcloud run deploy resume-chatbot \
+  --source . \
+  --platform managed \
+  --region us-central1 \
+  --allow-unauthenticated
+```
 
 ### Railway Deployment Features
 - Auto-deployment from main branch

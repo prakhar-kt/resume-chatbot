@@ -1,4 +1,4 @@
-# Use Python 3.11 slim image
+# Production Dockerfile for AWS Fargate / GCS Cloud Run
 FROM python:3.11-slim
 
 # Set working directory
@@ -7,30 +7,22 @@ WORKDIR /app
 # Set environment variables
 ENV PYTHONDONTWRITEBYTECODE=1 \
     PYTHONUNBUFFERED=1 \
-    PYTHONPATH=/app \
-    PATH="/app/.venv/bin:$PATH" \
-    VIRTUAL_ENV="/app/.venv"
+    PYTHONPATH=/app
 
 # Install system dependencies
 RUN apt-get update && apt-get install -y \
-    build-essential \
     curl \
     && rm -rf /var/lib/apt/lists/*
 
-# Install uv for fast dependency management
-RUN pip install uv
-
-# Copy dependency files
-COPY pyproject.toml uv.lock ./
-
-# Install Python dependencies
-RUN uv sync --frozen --no-dev
+# Copy dependency files and install Python dependencies
+COPY pyproject.toml ./
+RUN pip install --no-cache-dir .
 
 # Copy application code
 COPY . .
 
 # Create non-root user for security
-RUN adduser --disabled-password --gecos '' appuser && \
+RUN adduser --disabled-password --gecos '' --uid 1001 appuser && \
     chown -R appuser:appuser /app
 USER appuser
 
@@ -38,8 +30,8 @@ USER appuser
 EXPOSE 8000
 
 # Health check
-HEALTHCHECK --interval=30s --timeout=30s --start-period=5s --retries=3 \
+HEALTHCHECK --interval=30s --timeout=10s --start-period=40s --retries=3 \
     CMD curl -f http://localhost:8000/health || exit 1
 
-# Run the application using uvicorn from virtual environment
-CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8000"]
+# Run the application
+CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8000", "--workers", "1"]
